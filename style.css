@@ -1,0 +1,443 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --primary-clr-900: #000;
+  --primary-clr-800: #1C1C1C;
+  --primary-clr-700: #232323;
+  --primary-clr-500: #3D4235;
+  --primary-clr-400: #36890E;
+
+  --neutral-clr-100: #fff;
+
+  --fs-900: clamp(3rem, 9vw, 5.813rem);
+  --fs-800: clamp(2.5rem, 3vw, 3rem);
+  --fs-600: clamp(1.75rem, 3vw, 2.25rem);
+  --fs-500: clamp(1.25rem, 3vw, 1.625rem);
+  --fs-400: clamp(1rem, 3vw, 1.5rem);
+  --fs-300: .875rem;
+
+  --br: 2.375rem;
+}
+
+/* global stylings */
+
+body::-webkit-scrollbar {
+  width: .9375rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary-clr-400);
+  border-radius: 1.25rem;
+  border: .1875rem solid transparent;
+  background-clip: content-box;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(33, 69, 16, 0.75);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+/* header */
+
+header {
+  position: relative;
+  min-height: 100vh;
+  color: var(--neutral-clr-100);
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/bg-hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -2;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-social-links > li {
+  max-width: 2.625rem;
+  cursor: pointer;
+}
+
+.logo {
+  font-size: var(--fs-800);
+}
+
+.header-content {
+  max-width: 50rem;
+  margin-inline: auto;
+  margin-top: 6rem;
+}
+
+.header__title {
+  font-size: var(--fs-900);
+}
+
+.header__title > .remedios {
+  position: relative;
+}
+
+.header__title > .remedios::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--neutral-clr-100);
+}
+
+.header__title > .naturais {
+  color: var(--primary-clr-400);
+  position: relative;
+}
+
+.header__title > .naturais::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-clr-400);
+}
+
+.header__p {
+  text-align: center;
+  color: var(--neutral-clr-200);
+  font-size: var(--fs-400);
+  margin-block: 1rem 6rem;
+  opacity: .7;
+}
+
+.header-group-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.header-button__ver, .header-button__contato {
+  border: 0;
+  outline: transparent;
+  padding: .75rem 2.75rem;
+  cursor: pointer;
+  font-size: var(--fs-500);
+} 
+
+.header-button__ver {
+  border-radius: 2.375rem 0 2.375rem 2.375rem;
+  background-color: var(--primary-clr-400);
+  color: var(--neutral-clr-100);
+  border: 3px solid var(--primary-clr-400);
+  box-shadow: 0rem .3rem 0rem 0rem var(--primary-clr-900);
+}
+
+.header-button__contato {
+  border-radius: 0 2.375rem 2.375rem 2.375rem;
+  border: 3px solid var(--neutral-clr-100);
+  background-color: transparent;
+  color: var(--neutral-clr-100);
+}
+
+/* main */
+
+/* medicine section */
+
+.medicine-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-clr-500);
+  color: var(--neutral-clr-100);
+  padding-top: 7.5rem;
+}
+
+.medicine__title {
+  text-align: center;
+  font-size: var(--fs-800);
+  padding-bottom: 6.875rem;
+}
+
+.medicine-content {
+  display: flex;
+  justify-content: center;
+}
+
+.medicine-benefits-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.medicine-content-img-wrapper {
+  margin-right: 3.5rem;
+}
+
+.nTranslate {
+  transform: translateX(-10%);
+}
+
+.pTranslate {
+  transform: translateX(10%);
+}
+
+.medicine-content__benefits {
+  font-size: var(--fs-600);
+  width: fit-content;
+  max-width: 22ch;
+}
+
+.medicine-content__benefits::before {
+  content: "";
+  display: inline-block;
+  background-image: url("images/check-icon.png");
+  width: 30px;
+  height: 30px;
+  margin-right: .25rem;
+}
+
+.medicine-content-img-wrapper {
+  max-width: 450px;
+}
+
+/* products section */
+.products-section {
+  padding-block: 15rem;
+}
+
+.product:nth-child(2) {
+  max-width: 37.5rem;
+  margin-left: auto;
+}
+
+.products-section {
+  background-color: var(--primary-clr-500);
+  color: var(--neutral-clr-100);
+}
+
+.products__title {
+  text-align: center;
+  font-size: var(--fs-800);
+}
+
+.product {
+  display: flex;
+  margin-top: 6rem;
+  position: relative;
+}
+
+.product-description {
+  position: absolute;
+  left: 40%;
+  bottom: 50%;
+  transform: translateY(50%);
+  min-width: 28.125rem;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border-radius: 1.5rem;
+  padding: 2rem 3rem;
+}
+
+.product:nth-child(2) .product-description {
+  left: auto;
+  right: 75%;
+}
+
+.product__title {
+  font-size: var(--fs-800);
+  padding-bottom: 1rem;
+}
+
+.product__ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: var(--fs-400);
+}
+
+/* contact section */
+
+.contact-section {
+  background-color: var(--primary-clr-700);
+  color: var(--neutral-clr-100);
+}
+
+.contact__title {
+  font-size: var(--fs-600);
+}
+
+.contact-border-style {
+  border: 1px solid var(--neutral-clr-100);
+  padding: 1.25rem 0rem;
+}
+
+.contact-bg-style {
+  padding: 1.25rem 0rem;
+  background-color: #404040;
+  transform: translateX(15px);
+  position: relative;
+  z-index: 1;
+}
+
+.contact-content__img {
+  transform: translateX(25px);
+  position: relative;
+  z-index: 2;
+}
+
+.contact__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-clr-800);
+  padding: 3.75rem;
+}
+
+.input-name, .input-email {
+  margin-top: .25rem;
+  background-color: transparent;
+  border: 2px solid #9A9A9A;
+  padding-block: .25rem;
+  padding-left: .5rem;
+}
+
+.input-email {
+  margin-bottom: 1rem;
+}
+
+.form__p {
+  color: var(--neutral-clr-100);
+  opacity: .5;
+  font-size: var(--fs-300);
+  margin-top: 1rem;
+}
+
+.form__button {
+  background-color: var(--neutral-clr-100);
+  padding-block: .25rem;
+  cursor: pointer;
+}
+
+/* footer */
+
+.footer {
+  background-color: var(--primary-clr-700);
+  padding-block: 10rem 3.938rem;
+}
+
+.footer > ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer li {
+  max-width: 2.625rem;
+}
+
+/* utility classes */
+
+.container {
+  max-width: 69.375rem;
+  margin-inline: auto;
+  padding-top: 3.75rem;
+}
